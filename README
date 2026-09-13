@@ -1,0 +1,143 @@
+# Kubernetes Lab
+
+Hands-on Kubernetes lab focused on cluster deployment, networking, application hosting, troubleshooting, and infrastructure automation.
+
+The environment is built using Ubuntu Linux and MicroK8s and is used to develop practical experience with Kubernetes administration and containerized infrastructure services.
+
+## Lab Environment
+
+The lab currently consists of a multi-node Ubuntu environment running MicroK8s.
+
+Technologies include:
+
+- Ubuntu Server
+- Kubernetes / MicroK8s
+- containerd
+- Calico networking
+- Helm
+- NetBox
+- PostgreSQL
+- Valkey
+- Linux networking
+- kubectl
+
+The environment is used for hands-on testing rather than production workloads.
+
+## Kubernetes Cluster
+
+The lab covers:
+
+- MicroK8s installation and upgrades
+- Multi-node cluster configuration
+- Node joining and removal
+- Kubernetes namespaces
+- Pods
+- Deployments
+- Services
+- Persistent storage
+- Cluster networking
+- Container runtime troubleshooting
+- Application health checks
+
+Example administrative commands:
+
+```bash
+microk8s status
+microk8s kubectl get nodes
+microk8s kubectl get pods -A
+microk8s kubectl get services -A
+microk8s kubectl describe pod <pod-name>
+microk8s kubectl logs <pod-name>
+```
+
+## Kubernetes Networking
+
+A major focus of this lab is understanding Kubernetes networking from a network engineer's perspective.
+
+Topics include:
+
+- Pod addressing
+- Service addressing
+- ClusterIP services
+- Calico CNI
+- Inter-node communication
+- DNS
+- Service discovery
+- Application ports
+- Network troubleshooting
+- Connectivity between Kubernetes and the physical network
+
+This provides practical experience connecting traditional network engineering concepts with containerized infrastructure.
+
+## NetBox on Kubernetes
+
+NetBox is deployed in the Kubernetes lab using Helm.
+
+The deployment includes:
+
+- NetBox
+- PostgreSQL
+- Valkey
+- NetBox workers
+- Kubernetes services
+- Persistent application components
+
+The environment is being used to explore NetBox as a source of truth for network automation.
+
+## Troubleshooting
+
+The lab is intentionally used to reproduce and troubleshoot real Kubernetes problems.
+
+Examples include:
+
+- Pods failing startup probes
+- Container connection failures
+- Cluster node communication problems
+- Services not reaching application pods
+- Helm deployment issues
+- Dependency startup ordering
+- Kubernetes networking problems
+
+Troubleshooting tools include:
+
+```bash
+kubectl get pods
+kubectl describe pod
+kubectl logs
+kubectl get events
+kubectl get endpoints
+kubectl get services
+```
+
+## Integration with Network Automation
+
+Future development will integrate this Kubernetes environment with the separate `network-automation` project.
+
+Planned integrations include:
+
+- NetBox REST API
+- Automated network inventory
+- Device synchronization
+- Configuration compliance
+- Network source-of-truth validation
+- Containerized network automation tools
+
+## Roadmap
+
+Planned lab development includes:
+
+- NetBox API automation
+- Ingress configuration
+- Persistent storage testing
+- Kubernetes network policies
+- Application monitoring
+- Prometheus and Grafana
+- High-availability testing
+- Containerizing Python network automation tools
+- CI/CD experimentation
+
+## Security
+
+This repository contains lab-built and sanitized examples only.
+
+No employer, customer, production credentials, configurations, API keys, certificates, or sensitive network information are published.
