@@ -141,3 +141,48 @@ Planned lab development includes:
 This repository contains lab-built and sanitized examples only.
 
 No employer, customer, production credentials, configurations, API keys, certificates, or sensitive network information are published.
+
+
+## Cluster Health Script
+
+A Bash-based cluster health utility is included under:
+
+```text
+scripts/cluster-health.sh
+```
+
+The script performs a basic operational health assessment of the MicroK8s environment, including:
+
+- MicroK8s readiness
+- Kubernetes node state
+- Pod health
+- Services
+- Endpoints
+- Persistent volume claims
+- Recent Kubernetes events
+
+Run it from a MicroK8s node:
+
+```bash
+chmod +x scripts/cluster-health.sh
+./scripts/cluster-health.sh
+```
+
+Example sanitized output:
+
+```text
+------------------------------------------------------------
+ Node Readiness Check
+------------------------------------------------------------
+PASS: All Kubernetes nodes are Ready.
+
+------------------------------------------------------------
+ Pod Health Check
+------------------------------------------------------------
+PASS: No unhealthy pods detected.
+
+============================================================
+ Health Check Complete
+============================================================
+Overall status: PASS
+```
